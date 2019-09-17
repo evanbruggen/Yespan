@@ -1,3 +1,9 @@
+# My First Web Map in Leaflet.js
+
+This repository contains the scripts and data for my first interactive web map.
+
+You can view my map <[HERE](http://evanbruggen.github.io/repository)>
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/evanbruggen/Yespan/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
