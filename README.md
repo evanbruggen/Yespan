@@ -2,7 +2,7 @@
 
 This repository contains the scripts and data for my first interactive web map.
 
-You can view my map <[HERE](http://evanbruggen.github.io/repository)>
+You can view my map <[HERE](http://evanbruggen.github.io/Yespan)>
 
 ## Welcome to GitHub Pages
 
