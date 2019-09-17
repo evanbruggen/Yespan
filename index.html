@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+			<title> Max en Ellen's kaart </title>
+			<link rel="stylesheet" href="main.css"/>
+			<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+		</head>
+	<body>
+		<H1> Japan with a polygon and a circle </H1>
+		<div id="map"></div>
+		<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.5.0/proj4.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.js"></script>
+		<script>
+  //initialize the map         
+  var map = L.map('map').setView([35.863417, 137.065938], 15);
+
+  // Hash in URL
+var hash = new L.Hash(map);
+  
+  //Create baselayer - tiles         
+  var backgroundMap = L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
+	attribution: 'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.',
+	bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
+	minZoom: 1,
+	maxZoom: 8,
+	format: 'jpg',
+	time: '',
+	tilematrixset: 'GoogleMapsCompatible_Level'
+});
+  
+  backgroundMap.addTo(map);
+  
+  var Fuji = L.marker([35.363233, 138.732706]).addTo(map);
+  var National_Park = L.marker([35.231949, 139.030791]).addTo(map);
+  var Yokohama = L.marker([35.445185, 139.631737]).addTo(map);
+  var Izu_Oshima = L.marker([34.740226, 139.412698]).addTo(map);
+  
+  var popup = "Sushi!";
+Fuji.bindPopup(popup); 
+	var popup = "Nee Patrick, mierikswortel is geen instrument";
+National_Park.bindPopup(popup); 
+	var popup = "Krabby Patty";
+Yokohama.bindPopup(popup); 
+	var popup = "Ik ben er klaar voor";
+Izu_Oshima.bindPopup(popup); 
+
+var circle =  L.circle([35.680798, 139.756920], 2000, {
+	  color: 'lime',
+	  fillColor: '#f03',
+	  fillOpacity: 0.5
+	}).addTo(map);
+
+var polygon = L.polygon(
+  [[
+    [35.363233, 138.732706], 
+    [35.231949, 139.030791], 
+    [35.445185, 139.631737], 
+    [34.740226, 139.412698], 
+  ]]).addTo(map);
+  
+</script>
+	</body>
+	
